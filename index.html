@@ -1,17 +1,491 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Documenjjjt</title>
-</head>
-<body>
-	<ul>
-		<li></li>
-		<li>5</li>
-		<li>6</li>
-		<li>jgcv</li>
-		<li>4</li>
+	<meta name="WebPartPageExpansion" content="full" />
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="media.css">	
+	<!--[if lt IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js></script><![endif]-->
+	<title>Система управління ефективністю</title>
+	
+	<style type=text/css>
+	/*@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);*/
 
-	</ul>
-</body>
-</html>
+	html,
+	body {
+		height: 100%;
+	}
+	#wrap {
+		min-height: 100%;
+	}
+	main {
+		padding-bottom: 300px;
+	}
+	footer {
+		margin-top: -100px;
+		/*Минус Высота футера*/
+		height: 100px;
+		/*Высота футера*/
+	}
+	.customTopHolder {
+		background-color: #003366;
+		width: auto;
+		height: 80px;
+		padding:0px 33px;	
+	}
+	.grid {
+		/*display: grid;*/
+		display: block;
+		max-width: 1100px;
+		/*grid-template-columns: 1fr 1fr 1fr;*/
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+/*  grid-row-gap: 10px;
+grid-column-gap: 5px;	*/
+font-size: 0;
+}
+
+
+
+.table-kpi {
+	/*max-width: auto;*/
+	height: auto;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	margin: auto;
+	margin-top:60px;
+	margin-bottom:20px;
+	font-family: 'Arial Bold', sans-serif;
+	border-collapse: separate;
+	border-spacing: 5px;
+	background: #fff;
+	color: #656665;
+	border: 2px solid #2a69fc;
+	border-radius: 5px;
+	font-size: 0;
+}
+
+
+/*.grid div:nth-child(1) {
+	grid-column: 1 / -1;
+	grid-row: 1;
+}
+.grid div:nth-child(2) {
+	grid-column: 1 / -1;
+	grid-row: 2;
+}
+.grid div:nth-child(3) {
+	grid-column: 1 / -1;
+	grid-row: 3;
+}
+.grid div:nth-child(4) {
+	grid-column: 1 / -1;
+	grid-row: 4;
+}
+.grid div:nth-child(5) {
+	grid-column: 1 / -1;
+	grid-row: 5;
+	}*/
+
+
+
+	.customLogo {
+		position:relative;
+		left: 0px;
+		top:0px;
+		height:75px;	
+		width:244px;
+		display: block;
+		float: left;
+	}
+	.customTopNavHolder {
+		height: 35px;
+		background-image: url('../SiteAssets/image/nav-bg.png');
+		background-repeat: repeat;
+		padding-left: 23px;
+	}
+	.customTopNavHolder ul {
+		margin: 0px;
+		list-style-type: none;
+		padding: 0px;
+	}
+	.customTopNavHolder ul, .customTopNavHolder li, .customTopNavHolder li a {
+		display: inline-block;
+		float: left;
+	}
+	.customTopNavItem {
+		font-family: 'ArvoRegular',arial,sans-serif;
+		font-size: 17px;
+		height: 35px;
+		line-height: 35px;
+		padding: 0 15px;
+		border-right: 2px solid #ffed00;
+	}
+	a.customTopNavItem {
+		color: #efefef;
+	}
+	a.customTopNavItem:hover {
+		text-decoration: none;	
+		background-color: white;
+		color: #403a35;
+	}
+	
+	.kpi_photo1  a{
+		display: block;
+		/*width: 100%;*/
+		/*display: flex;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		/*   -webkit-transition: background .1s ease;*/
+		color:white;
+		height: 46px;	
+		font-size: 12px;
+		text-decoration: none;
+		background: #003366;
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+	}
+
+	.kpi_photo1 a:hover {	  
+		font-size: 14px; 
+		/*position:relative;*/    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		/*#FFFFFF*/
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+
+	}
+
+	
+	.kpi_photo2  a{
+		/*display: flex;*/
+		display: block;
+		/*width: 100%;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		height: 46px;
+		color:black;
+		font-size: 12px;
+		text-decoration: none;
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+	}
+
+	.kpi_photo2 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+
+	}
+	.kpi_photo3  a{
+		/* display: flex;*/
+		display: inline-block;
+		width: 33%;
+		float:left;
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		width:30%;
+		height: 46px;	
+		/*	text-align:center;*/
+		color:white;
+		font-size: 12px;
+		text-decoration: none;
+		/*  position: absolute; /* чтобы дочерние элементы позиционировались относительно границ ссылки-контейнера */
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+
+	}
+
+	.kpi_photo3 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+
+	}
+
+	.kpi_photo4  a{
+		/*display: flex;*/
+		display: block;
+		/*width: 100%;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		color:black;
+		height: 46px;	
+		font-size: 12px;
+		text-decoration: none;
+		/*    position: absolute; /* чтобы дочерние элементы позиционировались относительно границ ссылки-контейнера */
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+
+	}
+
+	.kpi_photo4 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+
+	}
+
+	
+	.kpi_photo5  a{
+		/*display: flex;*/
+		display: block;
+		/*width: 100%;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		color:white;
+		height: 46px;	
+		font-size: 12px;
+		text-decoration: none;
+		/*    position: absolute; /* чтобы дочерние элементы позиционировались относительно границ ссылки-контейнера */
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+		/*background-image: url(/image/kpi/logo.png);*/
+		background-repeat: no-repeat ;
+
+	}	
+	
+	.kpi_photo5 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+		/*background-image: url(/image/kpi/logo.png);*/
+		background-repeat: no-repeat ;
+
+	}
+
+	
+	
+	.kpi_photo6  a{
+		/*display: flex;*/
+		display: inline-block; 
+		width: 33%;	    
+		float:left;
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		color:black;
+		height: 46px;	
+		font-size: 12px;
+		/*	    position: absolute; /* чтобы дочерние элементы позиционировались относительно границ ссылки-контейнера */
+		border-radius: 5px;
+		text-decoration: none;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+
+	}
+
+	.kpi_photo6 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #d1d1d1;
+
+	}
+
+	
+	.kpi_photo7  a{
+		/*display: flex;*/
+		display: block;
+		/*width: 100%;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		color:white;
+		height: 46px;	
+		font-size: 12px;
+		background: #003366;
+		border-radius: 5px;
+		text-decoration: none;
+		border: 1px solid #666666;
+		padding: 10px;
+
+	}
+
+	.kpi_photo7 a:hover {	  
+		font-size: 14px; 
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d;
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+
+	}
+
+	
+
+	
+	.kpi_photo9  a{
+		/*display: flex;*/
+		display: inline-block;
+		width: 33%;
+		float:left;
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		color:white;
+		height: 46px;	
+		font-size: 12px;
+		text-decoration: none;
+		/*  position: absolute; /* чтобы дочерние элементы позиционировались относительно границ ссылки-контейнера */
+		background: #003366;
+		border-radius: 5px;
+		border: 1px solid #666666;
+		padding: 10px;
+
+	}
+
+	.kpi_photo9 a:hover {	  
+		font-size: 14px; /* Размер шрифта */
+		position:relative;    
+		border-radius: 5px;
+		box-shadow: 0 0 18px #605d5d; 
+		border: 1px solid #666666;
+		padding: 10px;
+		background: #003366;
+
+	}
+	.customFooterStripe {
+		background-color: #ffed00;
+		/*margin-top:50px;*/
+		margin:auto 0 0 0;
+		width: auto;
+		height: 7px;
+		padding:0px 35px;
+		margin-top:250px;
+	}
+	.customFooterHolder {
+		background-color: #003366;
+		width: auto;
+		/*height: auto;*/
+		color: #d1d1d1;
+		font-size: 14px;
+		padding:25px 35px;
+		/*margin-top: 250px;*/
+		margin-bottom:0px;
+	}
+	.customFooterHolder a {
+		color: #d1d1d1;
+	}
+	.customFooterLeft {
+		float: left;
+	}
+	.customFooterIcons {
+		padding-bottom: 3px;
+	}
+	.customFooterRight {
+		float: right;
+	}
+</style>
+</head>
+<body background="../SiteAssets/image/Tumblr.jpg">
+	<div id="wrap">
+		<div class="customTopHolder">
+			<a href="#" class="customLogo"><img src="../SiteAssets/image/logo.png" alt="Back to Home" width="240" height="75"></a>
+		</div>
+		<div class="customTopNavHolder">
+			<ul id="customTopNav">
+				<li><a href="https://www.ukrnafta.com/" class="customTopNavItem">Новини Компанії </a></li>
+				<li><a href="http://www.geonet.com/" class="customTopNavItem">Все для співробітників </a></li>
+			</ul>                    
+		</div>
+		<main>
+			<div class="table-kpi grid">
+				<div class="kpi_photo5">
+					<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/5.aspx" target="_blank">
+						<span >СИСТЕМА УПРАВЛІННЯ ЕФЕКТИВНІСТЮ РОБОТИ<br/>PERFORMANCE MANAGEMENT SYSTEM</span>					
+					</a></div> 
+
+					<div class="kpi_photo2">
+						<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/2.aspx" target="_blank">
+							<span >СТРАТЕГІЧНІ ПРІОРИТЕТИ 2018<br/>STRATEGIC PRIORITIES</span>			
+						</a></div> 
+
+						<div class="kpi_photo1">
+							<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/1.aspx" target="_blank">
+								<span >ВСТАНОВЛЕННЯ КПЕ<br/>KPIs SETTING</span>
+							</a></div>	
+
+							<div class="kpi_photo4">
+								<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/4.aspx" target="_blank">
+									<span >МОНІТОРИНГ ВИКОНАННЯ ПОКАЗНИКІВ<br/>PERFORMANCE MONITORING</span>			
+								</a></div> 
+
+								<div class="kpi_photo7">
+									<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/7.aspx" target="_blank">
+										<span >ОЦІНКА РОБОТИ<br/>PERFORMANCE APPRAISAL</span>
+									</a></div> 
+
+									<div class="kpi_photo3">
+										<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/3.aspx" target="_blank">
+											<span >ПРОЦЕС УПРАВЛІННЯ ЕФЕКТИВНІСТЮ<br/>PERFORMANCE MANAGEMENT PROCESS</span>			
+										</a></div> 
+
+										<div class="kpi_photo6">
+											<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/6.aspx" target="_blank">
+												<span >ПИТАННЯ, ЯКІ ЧАСТО ВИНИКАЮТЬ<br/>FREQUENT ASK QUESTIONS (FAQ)</span>			
+											</a></div> 
+
+											<div class="kpi_photo9">
+												<a href="https://portal.ukrnafta.local/sites/kpi/SitePages/9.aspx" target="_blank">
+													<span >ІНФОРМАЦІЙНИЙ БЛОК<br/>INFO DESK</span>
+												</a></div> 
+												<!--</form>  -->
+											</div>
+										</main>
+										<footer>
+											<div class="customFooterStripe"></div>
+											
+											
+											<div class="customFooterHolder">
+												<div class="customFooterLeft">
+													© Copyright 2017 Ukrnafta &nbsp;|&nbsp; All Rights Reserved.
+												</div>
+												<div class="customFooterRight">
+													<a href="https://www.ukrnafta.com/ru/pro-kompaniyu">About Us</a> &nbsp;| <a href="#">Terms of Service</a>
+												</div>
+											</div>
+										</footer>
+									</div>	
+								</body>
+								</html>
